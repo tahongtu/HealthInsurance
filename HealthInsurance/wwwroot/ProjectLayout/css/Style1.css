@@ -1,0 +1,547 @@
+﻿
+
+
+.card1 {
+    margin-bottom: 30px;
+    border: none;
+    -webkit-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    -moz-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+}
+
+
+
+.card1:hover{
+    transform: scale(1.05);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6f2;
+}
+.card-body {
+}
+
+.text-h5 {
+    font-weight: bold;
+}
+
+.text-container {
+    height: 60px;
+}
+
+.truncate-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.img-detail {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.card {
+    margin-bottom: 30px;
+    border: none;
+    -webkit-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    -moz-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+}
+    .card:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.txt-package {
+    color: #004445;
+}
+
+.packagename-txt{
+    font-weight: bold;
+
+}
+
+
+
+/* ==========================================================================
+  3. Dashboard Influencer
+   ========================================================================== */
+
+.dashboard-influence {
+}
+
+.influencer-profile-data {
+}
+
+    .influencer-profile-data .user-avatar {
+        margin-right: 40px;
+    }
+
+    .influencer-profile-data .user-avatar-info {
+        display: block;
+        margin-top: 14px;
+    }
+
+    .influencer-profile-data .user-avatar-name {
+        float: left;
+        padding-right: 20px;
+    }
+
+.user-avatar-address {
+}
+
+.influencer-profile-data .user-avatar-address {
+}
+
+.influencer-profile-data .user-avatar-email {
+    text-decoration: underline;
+}
+
+.influencer-profile-data .user-social-media {
+    padding: 16px 99px;
+    text-align: center;
+    border-right: 1px solid #e6e6f2;
+}
+
+    .influencer-profile-data .user-social-media:last-child {
+        border-right: transparent;
+    }
+
+.user-social-box {
+    background-color: #f9f9fc;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.dashboard-influence .progress {
+    width: 86%;
+    background-color: #ededfa;
+}
+
+.campaign-table {
+}
+
+    .campaign-table .dropdown-toggle::after {
+        display: none;
+    }
+
+.campaign-card {
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.campaign-img {
+    margin-bottom: 25px;
+}
+
+.campaign-info {
+}
+
+
+/* ==========================================================================
+  3. Influencer Finder
+   ========================================================================== */
+
+.influence-finder {
+}
+
+    .influence-finder .user-social-media {
+        padding: 16px 68px;
+        text-align: center;
+        border-right: 1px solid #e6e6f2;
+    }
+
+        .influence-finder .user-social-media:last-child {
+            border-right: transparent;
+        }
+
+    .influence-finder .icon-circle {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        padding: 9px;
+        line-height: 1.7;
+    }
+
+.search-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.influence-finder button.btn {
+    height: 47px;
+    width: 110px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+/* ==========================================================================
+ 4. Influencer Profile
+========================================================================== */
+
+.influence-profile {
+}
+
+.rating-star {
+    font-size: 12px;
+    padding-top: 8px;
+    color: #ffa811;
+}
+
+.campaign-social-box {
+    background-color: #f9f9fc;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.campaign-metrics {
+    border-right: 1px solid #dee2e6;
+    text-align: center;
+    padding: 8px 79px;
+}
+
+    .campaign-metrics:last-child {
+        border-right: transparent;
+    }
+
+.influence-profile-content.pills-regular .tab-content {
+    background-color: transparent;
+    padding: 0px;
+    border: transparent;
+    border-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.pills-regular .card-header-pills.nav.nav-pills .nav-item .nav-link.active {
+    background-color: #5969ff;
+    color: #fff;
+}
+.pills-regular {
+}
+
+.pills-regular .nav.nav-pills {
+}
+
+.pills-regular .nav.nav-pills .nav-item {
+}
+
+.pills-regular .nav.nav-pills .nav-item .nav-link {
+    background-color: #dddde8;
+    padding: 14px 26px;
+    margin-right: 3px;
+    color: #71748d;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+    .pills-regular .nav.nav-pills .nav-item .nav-link.active {
+        background-color: #52914f6b;
+        color: #000000;
+    }
+
+.pills-regular .tab-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+
+
+.review-block {
+}
+
+.review-text {
+}
+
+.dashboard-main-wrapper {
+    min-height: 100%;
+    padding-top: 60px;
+    position: relative;
+}
+
+.dashboard-wrapper {
+    position: relative;
+    left: 0;
+    
+    min-height: 870px !important;
+}
+
+.dashboard-content {
+    padding: 30px 30px 60px 30px;
+}
+
+.card2 {
+    margin-bottom: 30px;
+    border: none;
+    -webkit-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    -moz-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+}
+
+/*
+    Form Identity Verification
+*/
+
+
+
+.formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+
+.formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+    background: white;
+}
+
+.formbold-steps {
+    padding-bottom: 18px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #DDE3EC;
+}
+
+    .formbold-steps ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        gap: 40px;
+    }
+
+    .formbold-steps li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+    }
+
+        .formbold-steps li span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #DDE3EC;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #536387;
+        }
+
+        .formbold-steps li.active {
+            color: #07074D;
+            ;
+        }
+
+            .formbold-steps li.active span {
+                background: #6A64F1;
+                color: #FFFFFF;
+            }
+
+.formbold-input-flex {
+    display: flex;
+    gap: 20px;
+    
+}
+
+    .formbold-input-flex > div {
+        width: 50%;
+    }
+
+.formbold-form-input {
+    width: 100%;
+    padding: 13px 22px;
+    border-radius: 5px;
+    border: 1px solid #DDE3EC;
+    background: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    color: #536387;
+    outline: none;
+    resize: none;
+}
+
+    .formbold-form-input:focus {
+        border-color: #6a64f1;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+.formbold-form-label {
+    color: #07074D;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formbold-form-confirm {
+    border-bottom: 1px solid #DDE3EC;
+    padding-bottom: 35px;
+}
+
+    .formbold-form-confirm p {
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+        margin-bottom: 22px;
+        width: 75%;
+    }
+
+    .formbold-form-confirm > div {
+        display: flex;
+        gap: 15px;
+    }
+
+.formbold-confirm-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 0.5px solid #DDE3EC;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #536387;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: all .3s ease-in-out;
+}
+
+.formbold-confirm-btn {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+    .formbold-confirm-btn.active {
+        background: #6A64F1;
+        color: #FFFFFF;
+    }
+
+.formbold-form-step-1,
+.formbold-form-step-2,
+.formbold-form-step-3 {
+    display: none;
+}
+
+    .formbold-form-step-1.active,
+    .formbold-form-step-2.active,
+    .formbold-form-step-3.active {
+        display: block;
+    }
+
+.formbold-form-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.formbold-back-btn {
+    cursor: pointer;
+    background: #FFFFFF;
+    border: none;
+    color: #07074D;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    display: none;
+}
+
+    .formbold-back-btn.active {
+        display: block;
+    }
+
+.formbold-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6A64F1;
+    color: white;
+    cursor: pointer;
+}
+
+    .formbold-btn:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+.formbold-btn1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6A64F1;
+    color: white;
+    cursor: pointer;
+}
+
+    .formbold-btn1:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+.padding-layout{
+    padding-top:10px;
+}
+.center-it {
+    justify-content: center;
+    display: flex;
+}
+
+
+/* img Id card & avatar */
+.IdCard {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+}
+.avatar {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* contract */
+.cardContract {
+    margin-bottom: 30px;
+    border: none;
+    -webkit-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    -moz-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.date-create {
+    text-align: right;
+}
+.txt-center{
+    text-align: center;
+}
+.details {
+    text-align: justify;
+    font-size: 12px;
+     
+}
+
+}

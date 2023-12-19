@@ -1,0 +1,49 @@
+﻿@model HealthInsurance.Models.DiseaseList
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DiseaseList</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DiseaseName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DiseaseName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lv1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lv1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lv2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lv2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lv3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lv3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InsuranceProducts)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InsuranceProducts.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.DiseaseId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,511 @@
+﻿@model ProductDetailViewModel
+@{
+    ViewData["Title"] = "getProductDetail";
+    Layout = "~/Views/Shared/_LayoutDetail.cshtml";
+}
+    
+
+<div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="../ProjectLayout/images/banner.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid header_top_container">
+
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                VKU
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +84 382002619
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                hiboc@gmail.com
+              </span>
+            </a>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand " href="/Home"> HiBOC </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/Home"> Trang chủ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Home/About"> Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/InsuranceProducts/getAllProduct">Dịch vụ BH</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                @if (User.Identity.IsAuthenticated){
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Account/Logout">
+                                
+                                <span>
+                                    Đăng xuất
+                                </span>
+                            </a>
+                        </li>
+                    }else{
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Account/Login">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span>
+                                    Đăng nhập
+                                </span>
+                            </a>
+                        </li>
+                    }
+                <form class="form-inline justify-content-center">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-lg-10 col-md-11 mx-auto">
+                  <div class="detail-box">
+                    <h1>
+                      @Model.insuranceProducts.ProductName
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Mua Ngay
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+        
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+<!-- quyền lợi nổi bật -->
+<section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center ">
+        <h2 class="">
+          Quyền lợi nổi bật 
+        </h2>
+        
+      </div>
+      <div class="service_container">
+        <div class="carousel-wrap ">
+          <div class="service_owl-carousel owl-carousel">
+
+            @foreach (var item in Model.outstandingBenefits) {
+                <div class="item">
+                    
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="~/ProjectLayout/images/@item.Image" alt="" />
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                @item.OdName
+                            </h5>
+                            <p>
+                                @item.OdDescription
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            }
+
+            
+          
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+  <!-- chi tiết quyền lợi  -->
+  <section class="about_section">
+    <div class="container-fluid">
+        <div class="heading_container heading_center layout_padding-bottom">
+        <h2 class="">
+          Chi tiết quyền lợi
+        </h2>
+        
+      </div>
+      @{
+          var a = 1;
+      }
+      @foreach (var item in @Model.benefitDetails)
+        {
+            
+            if (a%2 == 1)
+            {
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box pr-md-2">
+                    <div class="heading_container">
+                      <h3 class="font-bold">
+                        @item.Title
+                      </h3>
+                    </div>
+                    
+                    <div>
+                       @Html.Raw(item.Content)
+                    </div>
+                    
+                
+                  </div>
+                </div>
+                <div class="col-md-6 px-0">
+                  <div class="img-box img-detail">
+                    <img src="../ProjectLayout/images/@item.Image" class="box_img" alt="about img">
+                  </div>
+                </div>
+                </div>
+                a++;
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-6 px-0">
+                      <div class="img-box img-detail">
+                        <img src="../ProjectLayout/images/@item.Image" class="box_img" alt="about img">
+                      </div>
+                    </div>
+                    <div class="col-md-5 offset-md-1">
+                      <div class="detail-box pr-md-2">
+                        <div class="heading_container">
+                          <h3 class="font-bold">
+                            @item.Title
+                          </h3>
+                        </div>
+                        
+                        <div>
+                          @Html.Raw(item.Content)
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                </div>
+                a++;
+            }
+            
+
+      }
+      
+    </div>
+  </section>
+
+
+
+
+  <!-- package -->
+  
+
+
+
+
+
+
+
+
+
+
+
+  <!-- giá mỗi option -->
+  <section class="team_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Bảo hiểm phù hợp với nhu cầu của bạn?
+        </h2>
+        <p>
+          Với các gói bảo hiểm sau đây, hãy lựa chọn gói sản phẩm phù hợp với nhu cầu
+        </p>
+      </div>
+      <div class="offset-xl-1 col-xl-10">
+        <div class="row">
+            @foreach (var item in Model.packageInsurances)
+            {
+                
+            
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+
+                <div class="card">
+                    <div class="card-header bg-white  p-4 ">
+                        <span class="mb-2 txt-package">Gói Bảo hiểm</span>
+                        <h3 class="mb-1 packagename-txt text-center">@item.PackageName</h3>
+                        
+                            
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Phạm vi bảo hiểm tối đa mỗi năm hợp đồng</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@item.Limit <strong>VND</strong></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Thời hạn bảo hiểm</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@item.Duration <strong>năm</strong></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Chi phí</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@item.Price <strong>VND</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body border-top btn-box">
+                      
+                          <a href="/ContractInsurances/Contract?prdId=@Model.insuranceProducts.ProductId&packageId=@item.PackageId" class=" btn1 btn btn-outline-secondary btn-block btn-lg">
+                            Mua Ngay
+                          </a>
+                      
+                        
+                    </div>
+                </div>
+            </div>
+            }      
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+ 
+
+
+
+
+
+  <!-- liên hệ tư  vấn -->
+  <section class="contact_section layout_padding2-bottom">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box ">
+            <img src="../ProjectLayout/images/contact-img.jpg" class="box_img" alt="about img">
+          </div>
+        </div>
+        <div class="col-md-5 mx-auto">
+          <div class="form_container">
+            <div class="heading_container heading_center">
+              <h2>Get In Touch</h2>
+            </div>
+            <form action="">
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" class="form-control" placeholder="Your Name" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="text" class="form-control" placeholder="Phone Number" />
+                </div>
+                <div class="form-group col-lg-6">
+                  <select name="" id="" class="form-control wide">
+                    <option value="">Select Service</option>
+                    <option value="">Service 1</option>
+                    <option value="">Service 2</option>
+                    <option value="">Service 3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="email" class="form-control" placeholder="Email" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" class="message-box form-control" placeholder="Message" />
+                </div>
+              </div>
+              <div class="btn_box">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Bình luận Đánh giá -->
+
+
+<section class="client_section layout_padding">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2>
+          Testimonial
+        </h2>
+        <hr>
+      </div>
+      <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-7 col-md-9 mx-auto">
+                <div class="client_container ">
+                  <div class="img-box">
+                    <img src="../ProjectLayout/images/client.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Jone Mark
+                    </h5>
+                    <p>
+                      Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+                    </p>
+                    <span>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-7 col-md-9 mx-auto">
+                <div class="client_container ">
+                  <div class="img-box">
+                    <img src="../ProjectLayout/images/client.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Jone Mark
+                    </h5>
+                    <p>
+                      Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+                    </p>
+                    <span>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-7 col-md-9 mx-auto">
+                <div class="client_container ">
+                  <div class="img-box">
+                    <img src="../ProjectLayout/images/client.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Jone Mark
+                    </h5>
+                    <p>
+                      Editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+                    </p>
+                    <span>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+            <span>
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+            <span>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,177 @@
+﻿@model HealthInsurance.Models.UserInformation
+@{
+    ViewData["Title"] = "KYC";
+    Layout = "~/Views/Shared/_LayoutKYC.cshtml";
+}
+
+
+<div class="heading_container heading_center layout_padding2-top">
+    <h2 class="">
+        Xác Minh Danh Tính
+    </h2>
+</div>
+<div class="formbold-main-wrapper">
+    
+  <!-- Author: FormBold Team -->
+  <!-- Learn More: https://formbold.com -->
+  <div class="formbold-form-wrapper">
+    <form asp-action="KYC" enctype="multipart/form-data">
+        <div class="formbold-steps center-it">
+            <ul >
+                <li class="formbold-step-menu1 active">
+                    <span>1</span>
+                    
+                </li>
+                <li class="formbold-step-menu2">
+                    <span>2</span>
+                    
+                </li>
+                <li class="formbold-step-menu3">
+                    <span>3</span>
+                    
+                </li>
+            </ul>
+        </div>
+
+        <div class="formbold-form-step-1 active">
+
+            <div>
+              <label asp-for="FullName" class="formbold-form-label"> Họ và Tên </label>
+              <input asp-for="FullName"  placeholder="Nguyễn Văn A" class="formbold-form-input"/>
+              <span asp-validation-for="FullName" class="text-danger"></span> 
+          </div>
+          <div class="formbold-input-flex">
+              <div>
+                  <label asp-for="Birthday" class="formbold-form-label"> Ngày sinh </label>
+                  <input 
+                  type="date" 
+                  asp-format="{0:dd-MM-yyyy}"
+                  class="formbold-form-input"
+                  asp-for="Birthday"
+                  />
+                  <span asp-validation-for="Birthday" class="text-danger"></span>
+              </div>
+              <div>
+                  <label asp-for="Sex" class="formbold-form-label"> Giới tính </label>
+                  <div class="padding-layout">
+                  <div class="form-check form-check-inline">
+                    <input asp-for="Sex" class="form-check-input" type="radio" name="sex"  value="Nam">
+                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input asp-for="Sex" class="form-check-input" type="radio" name="sex"  value="Nữ">
+                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input asp-for="Sex" class="form-check-input" type="radio" name="sex"  value="Khác">
+                    <label class="form-check-label" for="inlineRadio3">Khác </label>
+                  </div>
+                  </div>
+                  <span asp-validation-for="Sex" class="text-danger"></span>
+              </div>
+          </div>
+          <div>
+              <label asp-for="PhoneNumber" class="formbold-form-label"> Số điện thoại </label>
+              <input
+              
+              placeholder="0123456789"
+              class="formbold-form-input"
+              asp-for="PhoneNumber"
+              />
+              <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+          </div>
+  
+          
+  
+          <div>
+              <label asp-for="Address" class="formbold-form-label"> Address </label>
+              <input
+              
+              placeholder="Flat 4, 24 Castle Street, Perth, PH1 3JY"
+              class="formbold-form-input"
+              asp-for="Address"
+              />
+              <span asp-validation-for="Address" class="text-danger"></span>
+          </div>
+
+          <div>
+              <input type="hidden" name="uId" value="@User.FindFirst("UserId")?.Value" class="formbold-form-input"/>
+          </div>
+        </div>
+
+        <div class="formbold-form-step-2">
+          <div>
+              <label asp-for="CardId" class="formbold-form-label"> Số CCCD </label>
+              <input
+              
+              placeholder="012345678912"
+              class="formbold-form-input"
+              asp-for="CardId"
+              />
+              <span asp-validation-for="CardId" class="text-danger"></span>
+          </div>
+          <div>
+              <label asp-for="LicenseDate" class="formbold-form-label"> Ngày cấp </label>
+              <input 
+              type="date" 
+              asp-format="{0:dd-MM-yyyy}
+              class="formbold-form-input"
+              asp-for="LicenseDate"
+              />
+              <span asp-validation-for="LicenseDate" class="text-danger"></span>
+          </div>
+          <div class="formbold-input-flex">
+              <div>
+                  <label asp-for="FrontImage" class="formbold-form-label"> Ảnh mặt trước </label>
+                  <div class="center-it">
+                  <img class="IdCard" id="frontImg" src="../ProjectLayout/images/cardid.png" alt="Front Image" />
+                  </div>
+                  <input asp-for="FrontImage" type="file" name="frontImage" id="frontImgInput" class="formbold-form-input"/>
+                  <span asp-validation-for="FrontImage" class="text-danger"></span>
+              </div>
+              <div>
+                  <label asp-for="BackImage" class="formbold-form-label"> Ảnh mặt sau </label>
+                  <div class="center-it">
+                    <img class="IdCard" id="backImg" src="../ProjectLayout/images/cardid.png" alt="Back Image" />
+                  </div>
+                  <input asp-for="BackImage" type="file" name="backImage" id="backImgInput" class="formbold-form-input"/>
+                  <span asp-validation-for="BackImage" class="text-danger"></span>
+              </div>
+
+          </div>
+          <div>
+             <label asp-for="AvtImage" class="formbold-form-label"> Ảnh đại diện </label>
+             <div class="center-it">
+               <img class="avatar" id="avtImg" src="../ProjectLayout/images/avt.png" alt="Avatar Image" />
+             </div>
+             <input asp-for="AvtImage" type="file" name="avtImage" id="avtImgInput" class="formbold-form-input"/>
+             <span asp-validation-for="AvtImage" class="text-danger"></span>
+          </div>
+        </div>
+
+        <div class="formbold-form-step-3">
+          <div class="formbold-form-confirm">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            </p>
+
+           
+          </div>
+        </div>
+
+        <div class="formbold-form-btn-wrapper">
+          <button class="formbold-back-btn">
+            Back
+          </button>
+
+
+          <button class="formbold-btn">
+              Next Step
+              
+          </button>
+          <input type="submit" value="Submit" class="formbold-btn1" />
+        </div>
+    </form>
+  </div>
+</div>
+

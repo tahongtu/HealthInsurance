@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HealthInsurance.Models.ParticipationInformation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PIName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PIDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.File)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuranceProducts)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.File)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuranceProducts.Description)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ParticipationId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ParticipationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ParticipationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

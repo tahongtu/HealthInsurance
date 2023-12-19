@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HealthInsurance.Models.InsuranceProducts>
+@{
+    ViewData["Title"] = "ProductByCategory";
+    Layout = "~/Views/Shared/_LayoutProduct.cshtml";
+}
+
+
+<div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-6">
+                <a class="text-dark" href="/InsuranceProducts/getProductDetail?prdid=@item.ProductId">
+                <div class="card1">
+                    <div class="card-header ">
+                        <h5 class="text-h5"> @item.ProductName </h5> 
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="mb-0 ">
+                            <div class="text-container">
+                                <p class="truncate-text px-0">@item.Overview</p>
+                            </div>
+                            <footer class="blockquote-footer float-bottom">
+                                @item.Description
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                </a>
+            </div>
+        }
+        
+
+ 
+</div>
+
+
+
+
