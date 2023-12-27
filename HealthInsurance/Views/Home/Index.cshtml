@@ -69,20 +69,20 @@
           <div class="detail-box pr-md-2">
             <div class="heading_container">
               <h2 class="">
-                About Us
+                Về chúng tôi
               </h2>
             </div>
             <p class="detail_p_mt">
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+             Công ty bảo hiểm HiBOC tự hào là đơn vị cung cấp các sản phẩm bảo hiểm sức khỏe uy tín, chất lượng, với đa dạng quyền lợi và mức phí hợp lý. Chúng tôi hiểu rằng sức khỏe là vốn quý nhất của mỗi người, vì vậy chúng tôi luôn nỗ lực mang đến cho khách hàng những giải pháp bảo vệ sức khỏe toàn diện, giúp khách hàng an tâm tận hưởng cuộc sống. 
             </p>
-            <a href="about.html" class="">
-              Read More
+            <a href="/Home/About" class="">
+              Đọc thêm
             </a>
           </div>
         </div>
         <div class="col-md-6 px-0">
           <div class="img-box ">
-            <img src="../ProjectLayout/images/about-img.jpg" class="box_img" alt="about img">
+            <img src="../ProjectLayout/images/about.png" class="box_img" alt="about img">
           </div>
         </div>
       </div>
@@ -91,70 +91,7 @@
 
   <!-- about section ends -->
 
-  <!-- team section -->
-
-  <section class="team_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Our Team
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris
-          iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.
-        </p>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="../ProjectLayout/images/t1.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Martin Anderson
-              </h5>
-              <h6 class="">
-                supervisor
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="../ProjectLayout/images/t2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Denny Butler
-              </h5>
-              <h6 class="">
-                supervisor
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="../ProjectLayout/images/t3.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Nathan Mcpherson
-              </h5>
-              <h6 class="">
-                supervisor
-              </h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end team section -->
+  
 
   <!-- contact section -->
   <section class="contact_section ">
@@ -163,30 +100,31 @@
       <div class="row">
         <div class="col-md-6 px-0">
           <div class="img-box ">
-            <img src="../ProjectLayout/images/contact-img.jpg" class="box_img" alt="about img">
+            <img src="../ProjectLayout/images/contact1.jpg" class="box_img" alt="about img">
           </div>
         </div>
         <div class="col-md-5 mx-auto">
           <div class="form_container">
             <div class="heading_container heading_center">
-              <h2>Get In Touch</h2>
+              <h2>Tư Vấn Ngay</h2>
             </div>
             <form action="">
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="text" class="form-control" placeholder="Your Name" />
+                  <input type="text" class="form-control" placeholder="Họ và Tên" />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-lg-6">
-                  <input type="text" class="form-control" placeholder="Phone Number" />
+                  <input type="text" class="form-control" placeholder="Số Điện Thoại" />
                 </div>
                 <div class="form-group col-lg-6">
-                  <select name="" id="" class="form-control wide">
-                    <option value="">Select Service</option>
-                    <option value="">Service 1</option>
-                    <option value="">Service 2</option>
-                    <option value="">Service 3</option>
+                  <select name="optionCategory" id="" class="form-control wide">
+                    <option value="">Chọn loại bảo hiểm</option>
+                    @foreach (var item in Model)
+                   {
+                       <option value="@item.CategoryName<">@item.CategoryName</option>
+                   }
                   </select>
                 </div>
               </div>
@@ -197,12 +135,12 @@
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="text" class="message-box form-control" placeholder="Message" />
+                  <input type="text" class="message-box form-control" placeholder="Thông tin cần tư vấn" />
                 </div>
               </div>
               <div class="btn_box">
                 <button>
-                  SEND
+                  Gửi
                 </button>
               </div>
             </form>
@@ -215,7 +153,7 @@
 
   <!-- client section -->
 
-  <section class="client_section layout_padding">
+  @*<section class="client_section layout_padding">
     <div class="container ">
       <div class="heading_container heading_center">
         <h2>
@@ -308,7 +246,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>*@
 
   <!-- end client section -->
 

@@ -3,11 +3,7 @@
     ViewData["Title"] = "Contract";
     Layout = "~/Views/Shared/_LayoutContract.cshtml";
 }
-<h1>Contract</h1>
 
-<h1>@Model.insuranceProducts.ProductName</h1>
-<p>@Model.packageInsurances.PackageName</p>
-<p>@Model.userInformation.FullName</p>
 
 <section class="service_section layout_padding">
     <div class="container">
@@ -20,8 +16,11 @@
                                    
                         <div class="float-right"> 
                             <h5 class="mb-0 text-h5">Hợp Đồng @Model.insuranceProducts.ProductName</h5>
-                        <p class="date-create">@DateTime.Now.ToShortDateString()</p></div>
+                            <p class="date-create">@DateTime.Now.ToShortDateString()</p>
+                        </div>
                     </div>
+
+                    
                     <div class="card-body">
                         <div class="row mb-4">
                             <div class="col-sm-6">
@@ -114,11 +113,26 @@
                         </div>
                     </div>
                     <div class="card-footer bg-white">
-                        <p class="mb-0">2983 Glenview Drive Corpus Christi, TX 78476</p>
+                        <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
+                            <label class="be-checkbox custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Tôi đồng ý với mọi điều khoản</span>
+                            </label>
+                        </div>
+                        <div class="col-sm-6 pl-0">
+                            <p class="text-right">
+                                <a href="/ContractInsurances/AddBlock?prdId=@Model.insuranceProducts.ProductId&packageId=@Model.packageInsurances.PackageId">
+                                <button type="submit"  class="btn btn-space btn-primary">Submit</button>
+                                </a>
+                                <a href="/Home"><button class="btn btn-space btn-secondary">Cancel</button></a>
+                            </p>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
+
+        
 
     </div>
 </section>

@@ -9,11 +9,6 @@ namespace HealthInsurance.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             
-
-            
-
-            
-
             migrationBuilder.CreateTable(
                 name: "BenefitDetail",
                 columns: table => new

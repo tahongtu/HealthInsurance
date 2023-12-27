@@ -543,5 +543,8 @@
     font-size: 12px;
      
 }
+.btn-ok{
+    text-align: right;
+}
 
 }
