@@ -40,21 +40,6 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            <script type="text/javascript">
-                function formatInput(input) {
-                // Lấy giá trị từ input
-                let value = input.value;
-
-                // Loại bỏ tất cả các ký tự không phải là số
-                value = value.replace(/\D/g, '');
-
-                // Định dạng giá trị
-                const formattedValue = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-
-                // Gán giá trị đã định dạng lại vào input
-                input.value = formattedValue;
-}
-            </script>
         </form>
     </div>
 </div>
@@ -63,3 +48,18 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<script type="text/javascript">
+    function formatInput(input) {
+    // Lấy giá trị từ input
+    let value = input.value;
+
+    // Loại bỏ tất cả các ký tự không phải là số
+    value = value.replace(/\D/g, '');
+
+    // Định dạng giá trị
+    const formattedValue = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    // Gán giá trị đã định dạng lại vào input
+    input.value = formattedValue;
+}
+</script>

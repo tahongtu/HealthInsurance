@@ -59,13 +59,7 @@ namespace HealthInsurance.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PackageId,PackageName,Duration,Price,Limit,ProductId")] PackageInsurance packageInsurance)
         {
-            if (packageInsurance.PackageName != null && packageInsurance.Duration != null && packageInsurance.Price != null && packageInsurance.Limit != null)
-            {
-                _context.Add(packageInsurance);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            else if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(packageInsurance);
                 await _context.SaveChangesAsync();
@@ -88,7 +82,7 @@ namespace HealthInsurance.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.InsuranceProducts, "ProductId", "Description", packageInsurance.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.InsuranceProducts, "ProductId", "ProductName", packageInsurance.ProductId);
             return View(packageInsurance);
         }
 
@@ -124,7 +118,7 @@ namespace HealthInsurance.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.InsuranceProducts, "ProductId", "Description", packageInsurance.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.InsuranceProducts, "ProductId", "ProductName", packageInsurance.ProductId);
             return View(packageInsurance);
         }
 

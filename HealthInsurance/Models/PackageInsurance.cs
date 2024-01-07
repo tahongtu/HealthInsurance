@@ -20,5 +20,7 @@ namespace HealthInsurance.Models
         [ForeignKey("ProductId")]
         public virtual InsuranceProducts InsuranceProducts { get; set; }
 
+
+
     }
 }

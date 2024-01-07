@@ -5,92 +5,91 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<!-- ============================================================== -->
+<!-- pageheader  -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+            <h2 class="pageheader-title">Dashboard</h2>
+            <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Quản lý Khách hàng</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">HiBOC</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+                        
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AvtImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CardId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LicenseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FrontImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BackImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvtImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Birthday)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sex)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LicenseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FrontImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BackImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Password)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.InfId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.InfId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.InfId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row">
+                    
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <h5 class="card-header">User Account</h5>
+            <div class="card-body">
+                <div class="table-responsive">	
+                    <table class="table table-striped table-bordered first">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Tên khách hàng
+                                </th>
+                                <th>
+                                    Ngày sinh
+                                </th>
+                                                
+                                <th>
+                                    Giới tính
+                                </th>
+                                <th>
+                                    Số ĐT
+                                </th>
+                                <th>
+                                    Địa chỉ
+                                </th>
+                                <th>
+                                    Avatar
+                                </th>
+                                <th>
+                                    ...
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model) {
+
+                                <tr role="row" class="even">
+                                    <td class="sorting_1">@item.FullName</td>
+                                    <td>@item.Birthday.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.Sex</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.Address</td>
+                                    <td>
+                                        <img src="../ProjectLayout/images/@item.AvtImage" class="rounded-circle user-avatar-xxl">
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-space btn-primary">Sửa</button>
+                                        <button class="btn btn-space btn-secondary">Xóa</button>
+                                    </td>
+
+                                </tr>
+                                          
+                            }
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end basic table  -->
+    <!-- ============================================================== -->
+</div>

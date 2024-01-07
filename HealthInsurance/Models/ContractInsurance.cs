@@ -13,9 +13,17 @@ namespace HealthInsurance.Models
         [DataType(DataType.Date)]
         public DateTime DateEnd { get; set; }
 
+        [Required]
+        public int PackageId { get; set; }
+
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         public virtual InsuranceProducts InsuranceProducts { get; set; }
+
+        //public int PackageId { get; set; }
+
+        //[ForeignKey("PackageId")]
+        //public virtual PackageInsurance PackageInsurance { get; set; }
 
         public int UserId { get; set; }
         [ForeignKey("UserId")]

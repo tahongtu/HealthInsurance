@@ -37,7 +37,7 @@
             
             <div class="card-header text-center"><a href="/Home">@RenderBody()</a><span class="splash-description">Please enter your user information.</span></div>
               <div class="card-body">
-                <form asp-action="Create" id="basicform" data-parsley-validate="">
+                <form asp-action="Signup" id="basicform" data-parsley-validate="">
                     <div class="form-group">
                         <label for="UserName">User Name</label>
                         <input id="UserName" type="text" name="UserName" data-parsley-trigger="change" required="" placeholder="Enter user name" autocomplete="off" class="form-control">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="row">
                                             
-                        <div class="col-sm-6 pl-0">
+                        <div class="col-sm-8 pl-0">
                             <p class="text-right">
                                 <button type="submit" class="btn btn-space btn-primary">Đăng Ký</button>
                                 

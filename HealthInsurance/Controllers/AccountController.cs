@@ -34,7 +34,7 @@ namespace HealthInsurance.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,UserName,UserEmail,Password,Role")] User user)
+        public async Task<IActionResult> Signup([Bind("UserId,UserName,UserEmail,Password,Role")] User user)
         {
             if (ModelState.IsValid)
             {

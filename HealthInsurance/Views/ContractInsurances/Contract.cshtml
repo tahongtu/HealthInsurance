@@ -29,7 +29,7 @@
                                          
                                 <div>Địa chỉ: @Model.userInformation.Address</div>
                                 <div>CCCD: @Model.userInformation.CardId</div>
-                                <div>Ngày sinh: @Model.userInformation.Birthday</div>
+                                <div>Ngày sinh: @Model.userInformation.Birthday.ToString("dd/MM/yyyy")</div>
                                 <div>Giới tính: @Model.userInformation.Sex</div>
                                 <div>Email: @Model.user.UserEmail</div>
                                 <div>Phone: @Model.userInformation.PhoneNumber</div>
@@ -115,7 +115,7 @@
                     <div class="card-footer bg-white">
                         <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
                             <label class="be-checkbox custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Tôi đồng ý với mọi điều khoản</span>
+                                
                             </label>
                         </div>
                         <div class="col-sm-6 pl-0">

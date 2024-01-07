@@ -1,4 +1,5 @@
 ﻿@model ProductDetailViewModel
+
 @{
     ViewData["Title"] = "getProductDetail";
     Layout = "~/Views/Shared/_LayoutDetail.cshtml";
@@ -77,8 +78,11 @@
                 @if (User.Identity.IsAuthenticated){
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/Home/Profile?uId=@User.FindFirst("UserId")?.Value">
                                 <i class="fa fa-user" aria-hidden="true"></i>
+                                
+                                @User.FindFirst("UserId")?.Value
+                                
                             </a>
                         </li>
 
@@ -100,11 +104,6 @@
                             </a>
                         </li>
                     }
-                <form class="form-inline justify-content-center">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
               </ul>
             </div>
           </nav>
@@ -125,7 +124,7 @@
                       @Model.insuranceProducts.ProductName
                     </h1>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in
+                        @Model.insuranceProducts.Overview
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -334,10 +333,19 @@
                         </div>
                     </div>
                     <div class="card-body border-top btn-box">
-                      
-                          <a href="/ContractInsurances/Contract?prdId=@Model.insuranceProducts.ProductId&packageId=@item.PackageId" class=" btn1 btn btn-outline-secondary btn-block btn-lg">
+                        
+                        @if (User.Identity.IsAuthenticated){
+                            <a href="/ContractInsurances/Contract?prdId=@Model.insuranceProducts.ProductId&packageId=@item.PackageId" class=" btn1 btn btn-outline-secondary btn-block btn-lg">
                             Mua Ngay
                           </a>
+                        
+                    }else{
+                        <a href="/Account/Login" class=" btn1 btn btn-outline-secondary btn-block btn-lg">
+                            Mua Ngay
+                          </a>
+                    }
+
+                          
                       
                         
                     </div>
@@ -363,30 +371,29 @@
       <div class="row">
         <div class="col-md-6 px-0">
           <div class="img-box ">
-            <img src="../ProjectLayout/images/contact-img.jpg" class="box_img" alt="about img">
+            <img src="../ProjectLayout/images/contact1.jpg" class="box_img" alt="about img">
           </div>
         </div>
         <div class="col-md-5 mx-auto">
           <div class="form_container">
             <div class="heading_container heading_center">
-              <h2>Get In Touch</h2>
+              <h2>Tư Vấn Ngay</h2>
             </div>
             <form action="">
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="text" class="form-control" placeholder="Your Name" />
+                  <input type="text" class="form-control" placeholder="Họ và Tên" />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-lg-6">
-                  <input type="text" class="form-control" placeholder="Phone Number" />
+                  <input type="text" class="form-control" placeholder="Số điện thoại" />
                 </div>
                 <div class="form-group col-lg-6">
-                  <select name="" id="" class="form-control wide">
-                    <option value="">Select Service</option>
-                    <option value="">Service 1</option>
-                    <option value="">Service 2</option>
-                    <option value="">Service 3</option>
+                  <select name="optionCategory" id="" class="form-control wide">
+                    <option value="@Model.insuranceProducts.Category.CategoryName">@Model.insuranceProducts.Category.CategoryName</option>
+                    
+                    
                   </select>
                 </div>
               </div>
@@ -397,12 +404,12 @@
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="text" class="message-box form-control" placeholder="Message" />
+                  <input type="text" class="message-box form-control" placeholder="Thông tin cần tư vấn" />
                 </div>
               </div>
               <div class="btn_box">
                 <button>
-                  SEND
+                  Gửi
                 </button>
               </div>
             </form>

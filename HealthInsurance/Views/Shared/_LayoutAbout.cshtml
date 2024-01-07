@@ -104,30 +104,35 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Liên hệ</a>
                 </li>
-                <li class="nav-item">
+                @if (User.Identity.IsAuthenticated){
 
-                    @if (User.Identity.IsAuthenticated){
-                        <a class="nav-link" href="/Account/Logout">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <span>
-                                Đăng xuất
-                            </span>
-                        </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Profile?uId=@User.FindFirst("UserId")?.Value">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                
+                                @User.FindFirst("UserId")?.Value
+                                
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Account/Logout">
+                                
+                                <span>
+                                    Đăng xuất
+                                </span>
+                            </a>
+                        </li>
                     }else{
-                        <a class="nav-link" href="/Account/Login">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <span>
-                                Đăng nhập
-                            </span>
-                        </a>
-}
-                  
-                </li>
-                <form class="form-inline justify-content-center">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Account/Login">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span>
+                                    Đăng nhập
+                                </span>
+                            </a>
+                        </li>
+                    }
               </ul>
             </div>
           </nav>

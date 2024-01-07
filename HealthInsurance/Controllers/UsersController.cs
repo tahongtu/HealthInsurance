@@ -161,5 +161,29 @@ namespace HealthInsurance.Controllers
         {
           return (_context.User?.Any(e => e.UserId == id)).GetValueOrDefault();
         }
+
+        
+        public async Task<IActionResult> deleteUser(int id)
+        {
+            if (_context.User == null)
+            {
+                return Problem("Entity set 'HealthInsuranceContext.User'  is null.");
+            }
+            var user = await _context.User.FindAsync(id);
+            var userInfo = await _context.UserInformation.Where(a => a.UserId == id).FirstOrDefaultAsync();
+            if (user != null && userInfo != null)
+            {
+                _context.User.Remove(user);
+                _context.UserInformation.Remove(userInfo);
+            } else if (user != null && userInfo == null)
+            {
+                _context.User.Remove(user);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Users");
+        }
+
+
     }
 }

@@ -33,5 +33,7 @@ namespace HealthInsurance.Models
 
         public ICollection<Document> Documents { get; set; }
 
+        public ICollection<ContractInsurance> ContractInsurances { get; set; }
+
     }
 }

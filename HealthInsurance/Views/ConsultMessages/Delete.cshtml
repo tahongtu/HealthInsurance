@@ -1,4 +1,4 @@
-﻿@model HealthInsurance.Models.ContractInsurance
+﻿@model HealthInsurance.Models.ConsultMessage
 
 @{
     ViewData["Title"] = "Delete";
@@ -9,43 +9,43 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>ContractInsurance</h4>
+    <h4>ConsultMessage</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateStart)
+            @Html.DisplayNameFor(model => model.ClientName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateStart)
+            @Html.DisplayFor(model => model.ClientName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateEnd)
+            @Html.DisplayNameFor(model => model.PhoneNumber)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateEnd)
+            @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PackageId)
+            @Html.DisplayNameFor(model => model.InsuranceName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PackageId)
+            @Html.DisplayFor(model => model.InsuranceName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InsuranceProducts)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.InsuranceProducts.Description)
+            @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
+            @Html.DisplayNameFor(model => model.Message)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Password)
+            @Html.DisplayFor(model => model.Message)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="ContractId" />
+        <input type="hidden" asp-for="ConsultId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

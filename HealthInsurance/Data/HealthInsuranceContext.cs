@@ -36,6 +36,8 @@ namespace HealthInsurance.Data
 
         public DbSet<HealthInsurance.Models.ContractInsurance>? ContractInsurance { get; set; }
 
+        public DbSet<HealthInsurance.Models.ConsultMessage>? ConsultMessage { get; set; }
+
         
 
         
